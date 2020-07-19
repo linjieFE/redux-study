@@ -15,3 +15,11 @@ yarn start
 
 - http://localhost:3000
 
+## 安装andDesign
+
+```
+npm install antd --save
+```
+
+### 新建一个静态列表页面TodoList
+::: antd首字母大写 :::
