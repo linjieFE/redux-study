@@ -9,7 +9,8 @@ import {
     addItemAction, 
     deleteItemAction,
     // getListAction, 
-    getTodoList} from './store/actionCreators'
+    // getTodoList,
+    getMyListAction} from './store/actionCreators'
 class TodoList extends Component {
     constructor(props){
         super(props)
@@ -54,6 +55,9 @@ class TodoList extends Component {
         // })
         // const action = getTodoList()
         // store.dispatch(action)
+
+        const action = getMyListAction()
+        store.dispatch(action)
     }
     // 给input增加一个onchange事件
     changeInputValue(e){
