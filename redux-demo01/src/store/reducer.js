@@ -8,11 +8,23 @@ const defaultState = {
     ]
 }//默认对象
 export default (state = defaultState ,action)=>{
-    console.log(state,action)
+    // console.log(state,action)
+
     //Reducer里只以接收state，不能改变state
+    /**
+     * 输入input框时
+     */
     if(action.type ==='changeInput'){
         let newState = JSON.parse(JSON.stringify(state))//深拷贝
         newState.inputValue = action.value
+        return newState
+    }
+
+    //点击增加按钮的action
+    if(action.type === 'addItem'){
+        let newState = JSON.parse(JSON.stringify(state))//深拷贝
+        newState.list.push(newState.inputValue)
+        newState.inputValue=''
         return newState
     }
     return state

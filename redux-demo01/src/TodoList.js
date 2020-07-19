@@ -11,6 +11,7 @@ class TodoList extends Component {
         this.state=store.getState()
         this.changeInputValue=this.changeInputValue.bind(this)
         this.storeChange =this.storeChange.bind(this)
+        this.clickBtn = this.clickBtn.bind(this)
         //订阅
         store.subscribe(this.storeChange)//类例vue wacth
     }
@@ -24,7 +25,10 @@ class TodoList extends Component {
                         style={{width:'250px',marginRight:'10px'}}
                         onChange={this.changeInputValue}
                     />
-                    <Button type="primary">增加</Button>
+                    <Button type="primary"
+                        onClick={this.clickBtn}
+                        >增加
+                    </Button>
                  </div>
                  <div style={{margin:'10px', width:'300px'}}>
                     <List
@@ -51,6 +55,11 @@ class TodoList extends Component {
     storeChange(){
         this.setState(store.getState())
     }
+
+    //点击增加
+    clickBtn(){
+        const action = {type:'addItem'}
+        store.dispatch(action)
+    }
 }
- 
 export default TodoList;
