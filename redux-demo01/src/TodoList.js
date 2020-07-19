@@ -3,8 +3,13 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.min.css'
 import {Input, Button, List} from 'antd'
 import store from './store/index'//引入store
-import {changInputAction, addItemAction, deleteItemAction,getListAction} from './store/actionCreators'
 import axios from 'axios'
+import {
+    changInputAction, 
+    addItemAction, 
+    deleteItemAction,
+    // getListAction, 
+    getTodoList} from './store/actionCreators'
 class TodoList extends Component {
     constructor(props){
         super(props)
@@ -42,13 +47,13 @@ class TodoList extends Component {
          );
     }
     componentDidMount(){
-        axios.get('http://rap2.taobao.org:38080/app/mock/4705/getList').then((result) => {
-            const data = result.data
-            const action =getListAction(data)
-            store.dispatch(action)
-        }).catch((err) => {
-            
-        });
+        // axios.get('http://rap2.taobao.org:38080/app/mock/4705/getList').then((result) => {
+        //     const data = result.data
+        //     const action =getListAction(data)
+        //     store.dispatch(action)
+        // })
+        const action = getTodoList()
+        store.dispatch(action)
     }
     // 给input增加一个onchange事件
     changeInputValue(e){
