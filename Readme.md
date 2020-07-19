@@ -42,3 +42,4 @@ npm install --save redux
 
     }
 ```
+### 无状态组件
