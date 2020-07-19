@@ -12,7 +12,7 @@ class TodoList extends Component {
         this.changeInputValue=this.changeInputValue.bind(this)
         this.storeChange =this.storeChange.bind(this)
         //订阅
-        // store.subscribe(this.storeChange)//类例vue wacth
+        store.subscribe(this.storeChange)//类例vue wacth
     }
     
     render() { 
@@ -23,7 +23,6 @@ class TodoList extends Component {
                         placeholder={this.state.inputValue} 
                         style={{width:'250px',marginRight:'10px'}}
                         onChange={this.changeInputValue}
-                        value={this.state.inputValue}
                     />
                     <Button type="primary">增加</Button>
                  </div>
