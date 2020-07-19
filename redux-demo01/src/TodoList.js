@@ -34,7 +34,7 @@ class TodoList extends Component {
                     <List
                         bordered
                         dataSource={this.state.list}
-                        renderItem={item =>(<List.Item>{item}</List.Item>)}
+                        renderItem={(item,index) =>(<List.Item onClick={this.deleteItem.bind(this, index)}>{item}</List.Item>)}
                     />
                  </div>
             </div>
@@ -59,6 +59,13 @@ class TodoList extends Component {
     //点击增加
     clickBtn(){
         const action = {type:'addItem'}
+        store.dispatch(action)
+    }
+
+    //删除
+    deleteItem(index){
+        console.log(index)
+        const action = {type:'deleteItem',index}
         store.dispatch(action)
     }
 }
