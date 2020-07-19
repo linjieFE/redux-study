@@ -67,3 +67,9 @@ sudo npm install --save redux-thunk
 ···
 import thunk from 'redux-thunk'
 ···
+
+### 另一个redux中间件 redux-saga
+
+```
+npm install --save redux-saga
+```
