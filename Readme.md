@@ -43,3 +43,27 @@ npm install --save redux
     }
 ```
 ### 无状态组件
+
+## 调mock接口
+
+```bash
+sudo npm install --save axios  
+```
+
+### redux-thunk中间件
+
+
+ Middleware Redux-Thunk中间件
+      dispatch   👆   
+action ------> store -----> reducer
+
+- 安装中间件插件
+
+```
+sudo npm install --save redux-thunk 
+```
+- 配置
++ store/index.js 引入 详见代码注释
+···
+import thunk from 'redux-thunk'
+···
