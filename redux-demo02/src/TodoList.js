@@ -4,7 +4,6 @@ import {connect} from 'react-redux';//连接器
 class TodoList extends Component {
     constructor(props){
         super(props)
-        this.state=store.getState()
     }
     render() { 
         return ( 
