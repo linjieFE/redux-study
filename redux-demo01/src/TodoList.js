@@ -12,7 +12,7 @@ class TodoList extends Component {
         this.changeInputValue=this.changeInputValue.bind(this)
         this.storeChange =this.storeChange.bind(this)
         //订阅
-        store.subscribe(this.storeChange)//类例vue wacth
+        // store.subscribe(this.storeChange)//类例vue wacth
     }
     
     render() { 
