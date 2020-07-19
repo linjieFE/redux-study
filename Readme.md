@@ -28,3 +28,17 @@ npm install antd --save
 ```
 npm install --save redux
 ```
+
+### redux常遇三上小坑
+
+- store 必需是唯一的 只能有一个`store`空间
+- 只有 `store` 能改变自己的内容， `Reducer` 不能改变 
+- `Reducer` 必需量个 `纯函数`
+
++ `纯函数` - 如果函数的调用参数相同，则永远返回相同的结果，它不依赖于程序执行期间涵数外部任何状态或数据的变化，**必须只依赖于其输入参数决定**，（如本例中`reducer.js` 的`state`  和 `action`）
+```js
+    export default (state = defaultState ,action)=>{
+        //todo ...
+
+    }
+```
