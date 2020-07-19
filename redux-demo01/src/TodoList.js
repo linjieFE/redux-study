@@ -52,8 +52,8 @@ class TodoList extends Component {
         //     const action =getListAction(data)
         //     store.dispatch(action)
         // })
-        const action = getTodoList()
-        store.dispatch(action)
+        // const action = getTodoList()
+        // store.dispatch(action)
     }
     // 给input增加一个onchange事件
     changeInputValue(e){
