@@ -21,5 +21,10 @@ yarn start
 npm install antd --save
 ```
 
-### 新建一个静态列表页面TodoList
+### 第一章 新建一个静态列表页面TodoList
 ::: antd首字母大写 :::
+
+### 第二章 安装redux
+```
+npm install --save redux
+```
