@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.min.css'
 import {Input, Button, List} from 'antd'
 import store from './store/index'//引入store
+import {CHANGE_INPUT, ADD_ITEM, DELETE_ITEM} from './store/actionTypes'//引入store
 
 class TodoList extends Component {
     constructor(props){
@@ -45,7 +46,7 @@ class TodoList extends Component {
     changeInputValue(e){
         // 建立一个action与redux建立连接
         const action = {
-            type:'changeInput',//action事件名
+            type:CHANGE_INPUT,//action事件名
             value: e.target.value//传值
         }
         store.dispatch(action)//发送给store
@@ -58,14 +59,14 @@ class TodoList extends Component {
 
     //点击增加
     clickBtn(){
-        const action = {type:'addItem'}
+        const action = {type:ADD_ITEM}
         store.dispatch(action)
     }
 
     //删除
     deleteItem(index){
         console.log(index)
-        const action = {type:'deleteItem',index}
+        const action = {type:DELETE_ITEM, index}
         store.dispatch(action)
     }
 }

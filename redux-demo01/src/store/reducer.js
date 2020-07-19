@@ -1,3 +1,5 @@
+import {CHANGE_INPUT, ADD_ITEM, DELETE_ITEM} from './actionTypes'//引入store
+
 // 报漏一个方法
 const defaultState = {
     inputValue:'Write Someting',
@@ -6,7 +8,8 @@ const defaultState = {
         '早上9点和项目经理开需求沟通会一',
         '早上9点和项目经理开需求沟通会二'
     ]
-}//默认对象
+}
+//默认对象
 export default (state = defaultState ,action)=>{
     // console.log(state,action)
 
@@ -14,21 +17,21 @@ export default (state = defaultState ,action)=>{
     /**
      * 输入input框时
      */
-    if(action.type ==='changeInput'){
+    if(action.type ===CHANGE_INPUT){
         let newState = JSON.parse(JSON.stringify(state))//深拷贝
         newState.inputValue = action.value
         return newState
     }
 
     //点击增加按钮的action
-    if(action.type === 'addItem'){
+    if(action.type === ADD_ITEM){
         let newState = JSON.parse(JSON.stringify(state))//深拷贝
         newState.list.push(newState.inputValue)
         newState.inputValue = ''
         return newState
     }
     //点击增加按钮的action
-    if(action.type === 'deleteItem'){
+    if(action.type === DELETE_ITEM){
         let newState = JSON.parse(JSON.stringify(state))//深拷贝
         newState.list.splice(action.index,1)
         return newState
