@@ -1,31 +1,51 @@
 import React, { Component } from 'react';
 // import store from './store/index';
 import {connect} from 'react-redux';//连接器
-class TodoList extends Component {
-    // constructor(props){
-    //     super(props)
-    // }
-    render() { 
-        return ( 
+//改成无状态组件
+const TodoList =(props)=>{
+    let {inputValue,inputChange,deleteItem,clickBtn,list} = props
+    return (
+        <div>
             <div>
-                <div>
-                   <input value={this.props.inputValue} onChange={this.props.inputChange}/>
-                   <button onClick={this.props.clickBtn}>提交</button> 
-                </div>
-                <ul>
-                    {
-                        this.props.list.map((item,index)=>{
-                            return (
-                                <li key={index} onClick={this.props.deleteItem.bind(this,index)}>{item}</li>
-                            )
-                        })
-                    } 
-                </ul>
-            </div> 
-        );
-    }
-    
+            <input value={inputValue} onChange={inputChange}/>
+            <button onClick={clickBtn}>提交</button> 
+            </div>
+            <ul>
+                {
+                    list.map((item,index)=>{
+                        return (
+                            <li key={index} onClick={deleteItem.bind(this,index)}>{item}</li>
+                        )
+                    })
+                } 
+            </ul>
+        </div> 
+    )
 }
+
+// class TodoList extends Component {
+//     render() { 
+//         let {inputValue,inputChange,deleteItem,clickBtn,list} = this.props
+//         return ( 
+//             <div>
+//                 <div>
+//                    <input value={inputValue} onChange={inputChange}/>
+//                    <button onClick={clickBtn}>提交</button> 
+//                 </div>
+//                 <ul>
+//                     {
+//                         list.map((item,index)=>{
+//                             return (
+//                                 <li key={index} onClick={deleteItem.bind(this,index)}>{item}</li>
+//                             )
+//                         })
+//                     } 
+//                 </ul>
+//             </div> 
+//         );
+//     }
+    
+// }
  const stateToProps=(state)=>{
      return {
          inputValue:state.inputValue,
