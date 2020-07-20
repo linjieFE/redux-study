@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';//提供器
 import store from './store'
 const App=(
     <Provider store={store}>
-        <TodoList/>>
+        <TodoList/>
     </Provider>
 )
 ReactDOM.render(App,document.getElementById('root'));
