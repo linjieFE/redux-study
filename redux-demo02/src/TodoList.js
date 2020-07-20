@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 // import store from './store/index';
 import {connect} from 'react-redux';//连接器
-//改成无状态组件
+
+/**
+ * 改成无状态组件的优点
+ * @param {*} props 
+ */
 const TodoList =(props)=>{
     let {inputValue,inputChange,deleteItem,clickBtn,list} = props
     return (
