@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import store from './store/index';
 import {connect} from 'react-redux';//连接器
+import AppRouter from './AppRouter';
 
 /**
  * 改成无状态组件的优点
@@ -10,6 +11,7 @@ const TodoList =(props)=>{
     let {inputValue,inputChange,deleteItem,clickBtn,list} = props
     return (
         <div>
+            <AppRouter/>
             <div>
             <input value={inputValue} onChange={inputChange}/>
             <button onClick={clickBtn}>提交</button> 
