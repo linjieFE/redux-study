@@ -8,10 +8,8 @@ import Index from './Home'
 //--关键代码------------start
 import Video from './Pages/Video'
 //--关键代码------------end
-/**
- * 两个无状态组件 index & list
- * @param {*} props 
- */
+
+import Workplace from './Pages/workPlace'
 
 
 function AppRouter() {
@@ -33,7 +31,7 @@ function AppRouter() {
                     {/*--关键代码------------start*/}
                      <li><Link to="/video/">视频教程</Link> </li>
                     {/*--关键代码------------end*/}
-                    <li><Link to="">职场技能</Link> </li>
+                    <li><Link to="/workplace/">职场技能</Link> </li>
                 </ul>
             </div>
 
@@ -42,6 +40,7 @@ function AppRouter() {
                 {/*--关键代码------------start*/}
                 <Route path="/video/"   component={Video} />
                  {/*--关键代码------------end*/}
+                <Route path="/workplace/"   component={Workplace} />
             </div>
           </div>
         </Router>
